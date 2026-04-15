@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="check()">click to call check function</button>
+    <p id="result"></p>
+    <button onclick="calculateSalary()">calculate salary</button>
+  <h1 id="sal"></h1>
+    <!-- functions
+    ->  block of code which performs a specific task 
+    -> resusable code
+    -->
+    
+    <script>
+        //  check number is even or odd
+        function check(){
+        var n=Number(prompt("enter a number"))
+        if(n%2==0){
+            document.getElementById("result").innerText=("even number"+n)
+        }
+        else{
+            document.getElementById("result").innerHTML=("odd number"+n)
+
+        }
+    }
+
+    function calculateSalary(){
+        var salary=Number(prompt("enter your salary"))
+        var perday=salary/30
+        document.getElementById("sal").innerText="per day salary="+perday
+    }
+    
+    // calling a function
+    // check()
+    // get get salary of a person
+    // calculate per day salary of a person
+    </script>
+</body>
+</html>

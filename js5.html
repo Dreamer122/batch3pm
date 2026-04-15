@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="checkNumber()">checkpositive/negative</button>
+    <h2 id="res"></h2>
+    <button onclick="attendence()">calculate attendance</button>
+    <h2 id="res1"></h2>
+    
+
+    <button onclick="lastdigit()">last digit</button>   
+    <h2 id="res2"></h2>
+    <button onclick="checkmarks()">check marks</button>
+    <h2 id="res3"></h2>
+    <button onclick="checkvowel()">check vowel</button>
+    <h2 id="res4"></h2>
+
+
+    <!--  LOGICAL OPERATOR
+    AND -> it gives true if all the given conditions are true
+    OR -> it gives true if any one of the given conditions is true
+    NOT  ->reverses the result of a condition
+    &&
+    ||
+    !
+
+    cond1  cond2  and   or
+    true   true   true  true
+    true   false false true
+    false true  false true
+    false false false false
+
+not(age>18) -> age=21
+    -->
+<script>
+    // camelcase
+    function checkNumber(){
+        var num=Number(prompt("enter a number"))
+        if(num>0){
+            document.getElementById("res").innerText="Positive"+ num
+        }
+        else{
+            document.getElementById("res").innerText="Negative"+ num
+        }
+
+    }
+
+    function attendence(){
+        var totallec=Number(prompt("enter total lectures"))
+        var attendedlec=Number(prompt("enter attended lectures"))
+        var attendence_per=attendedlec/totallec*100
+        if(attendence_per>=75){
+            document.getElementById("res1").innerText="allowed for exam"+ attendence_per
+
+        }
+        else{
+            document.getElementById("res1").innerText="not allowed for exam"+ attendence_per
+        }
+    }
+    function lastdigit(){
+        var num=Number(prompt("enter a number"))
+        var last=num%10
+        if(last%3==0){
+            document.getElementById("res2").innerText="last digit is"+ last+"DIVISIBLE BY 3"
+        }
+        else{
+            document.getElementById("res2").innerText="last digit is"+ last+"NOT DIVISIBLE BY 3"
+        }
+    }
+
+    // 
+    function checkmarks(){
+        var marks=Number(prompt("enter your marks"))
+        if(marks>70 && marks<100){
+            document.geattendencetElementById("res3").innerText="pass"
+        }
+        else{
+            document.getElementById("res3").innerText="fail"
+        }
+      
+    }
+
+    function checkvowel(){
+        var char=prompt("enter a character")
+        if(char=="a" || char=="e" || char=="i" || char=="o" || char=="u"){
+            document.getElementById("res4").innerText="it is a vowel"
+        }
+        else{
+            document.getElementById("res4").innerText="it is not a vowel"
+        }
+    }
+
+
+
+</script>
+
+</body>
+</html>
