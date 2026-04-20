@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+    if(c1){
+        statement1
+        if(c2){
+         statement2
+    }
+         else{
+            statement3
+         }
+    }
+         else{
+            statement4
+         }
+    
+    
+    -->
+         <button onclick="jee()">jee</button>
+    
+    <script>
+        // marks 
+        // 100-90 -> 1st
+        // 89-80 -> 2nd
+        // 79-70 -> 3rd
+        // 69-60 -> 4th    
+        // 59-50 -> 5th
+        // else- fail
+// nested if 
+
+function jee(){
+    var marks=Number(prompt("enter marks of 12th class"))
+    if(marks>=70){
+        alert("you are eligible for jee mains")
+        var jeemains=Number(prompt("enter marks of jee mains"))
+        if(jeemains>=60){
+            alert("eligible for jee advanced")
+        }
+        else{
+            alert("not eligible for jee advanced")
+        }
+    }
+    else{
+        alert("not eligible for jee mains")
+    }
+}
+
+    </script>
+</body>
+</html>
