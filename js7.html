@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- switch 
+    assignment 
+    =
+    += a+=2
+    -=
+    *=
+    /=
+    **=
+    %= 
+
+
+    LOOP -> it is used to execute a statement (group) repeatedly untill
+     the given condition is satisfied 
+
+     types ->
+     for LOOP
+     while LOOP
+     do while loop
+
+
+    -->
+    <script>
+        /*
+        a=10
+        // a++
+        // console.log(a)
+        // a++
+        // a--
+        // console.log(a)
+        a+=3
+        console.log(a)
+        a*=2
+        console.log(a)
+        a-=10 
+        // a=a-10
+        console.log(a)
+
+        var marks=98
+        switch(marks){
+            case 100 : document.write("full marks")
+            break;
+            case 99: document.write("99%")
+            break;
+            case 98: document.write("98%")
+            break;
+            default:document.write("invalid case")
+        } 
+
+        var letter=prompt("enter a letter")
+         switch(letter){
+            case "a" : document.write("vowel")
+            break;
+            case "e" : document.write("vowel")
+            break;
+            case "i" : document.write("vowel")
+            break;
+            case "o" : document.write("vowel")
+            break;
+            case "u" : document.write("vowel")
+            break;
+            default : document.write("consonant")
+         }
+
+         */
+
+        //  loops
+        // for(start,end,step){
+        //     statement
+        // }
+        // 10 0
+        // i>0
+        i=0
+        // condition check
+        // Work
+        // increment 
+        for(var i=0;i<=10;i++){
+            document.write("hello"+i+"<br>")
+        }
+
+        for (var k=1;k<=25;k=k+2){
+            document.write(k+"<br>")
+        }
+
+        var num=Number(prompt("enter a number"))
+        // 2*1=2
+        // 2*2=4
+        // 2*3=6
+        for (var j=1;j<=10;j++){
+            document.write(num,"*",j,"=",num*j+"<br>")
+        }
+        // 
+ for (var j=1;j<=10;j++){
+            document.write(j**2+"<br>")
+        }
+
+
+        // negative (reverse)
+
+        for(var start=10;start>0;start--){
+            document.write(start+"<br>")
+        }
+
+        // reverse table
+        
+        // sum of all number in range
+        var s=0
+        for(var d=1;d<=10;d++){
+            s=s+d // 0+1 => 1+2=3+3=6+4=10+5=15+6=21+7=28+8=36+9=45+10=55
+        }
+        document.write(s+"<br>")
+
+        // print all even number from 1- 20
+        for(var f=1;f<=20;f++ ){
+            if(f%2==0){
+                document.write(f,"even <br>")
+            }
+        }
+
+    </script>
+
+</body>
+</html>
