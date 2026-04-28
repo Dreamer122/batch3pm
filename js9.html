@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- array  
+     [2,8.9,"hello"]
+     ordered 
+     index -> position of element in array
+     start -> 0 
+     duplicacy allowed
+     heterogeneous -> different types of data
+        array is mutable -> changeable
+     
+    -->
+     <script>
+        // let array=[7,8,4,89]
+        let ar=Array(7,8,4,89,"hello",6.8,true,4)
+        // console.log(array)
+        // document.write(array)
+        document.write("<br>"+ar.length)
+        document.write("<br>"+ar[1]+""+ar[3]); // access element using index
+        document.write("<br>"+ar.indexOf(4)); //find index of element
+        document.write("<br>"+ar.lastIndexOf(4))
+        ar.push("js")
+        document.write("<br>"+ar)
+        ar.pop()
+        document.write("<br>"+ar)
+        ar.unshift("python")
+        document.write("<br>"+ar)
+        ar.shift()
+        document.write("<br>"+ar)
+        // add or remove eelement from a specified index
+        ar.splice(3,0,"css") // add
+        document.write("<br>"+ar)
+        ar.splice(5,1,"html") // replace
+        document.write("<br>"+ar)
+        ar.splice(6,2) // remove
+        document.write("<br>"+ar)
+
+        document.write("<br>"+ar.includes("Css"))
+        document.write("<br>"+ar.concat([233,899,566],))
+ar.reverse()
+document.write("<br>"+ar)
+let a=[2,4,89,292,277,67,389]
+a.sort() // by default it works on single digit number and sort in ascending order
+document.write("<br>"+a)
+a.sort(function(a,b){return a-b})
+document.write("<br>"+a)
+
+// ar[0]
+for(let i=0;i<ar.length;i++){ //i=1
+    document.write("<br>"+ar[i])
+}
+// for of loop
+for(let element of ar){
+    document.write("<br>"+element)
+}
+
+     </script>
+</body>
+</html>
