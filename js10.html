@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="text" id="num1" placeholder="enter value 1"> <br>
+    <input type="text" id="num2" placeholder="enter value 2"> <br>
+    <input type="text" id="op" placeholder="enter operator +,-,*,/"> <br>
+    <button onclick="calculator()">calculate</button>
+    <!-- functions
+    block of code
+    types ->
+    1. without parameter and without return type
+    2. with parameter and without return type 
+    3. without parameter and with return type
+    4. with parameter and with return type
+    -->
+     <script>
+
+function add(a,b){ // a and b are parameters
+    let sum=a+b
+    document.write("<br>sum is "+sum)
+    return [a,b]
+}
+let x=add(6,9)
+document.write("<br>sum is "+x)
+
+function sub(){
+    let a=6
+    let b=9
+    let z=a-b
+    return z
+}
+let y=sub()
+document.write("<br>sub is "+y)
+
+
+//  calculator functions
+// add,sub,mul,div
+// main 
+function sum(x,y){
+    return x+y
+
+}
+function sub(x,y){
+    return x-y
+}
+function mul(x,y){
+    return x*y
+}
+function div(x,y){
+    return x/y
+}
+
+function calculator(){
+    let num1=Number(document.getElementById("num1").value)
+    let num2=Number(document.getElementById("num2").value)
+    let op=document.getElementById("op").value
+    let res;
+    if(op=="+"){
+        res=sum(num1,num2)
+    }
+    else if(op=="-"){
+        res=sub(num1,num2)
+    }
+    else if(op=="*"){
+        res=mul(num1,num2)
+    }
+    else if(op=="/"){
+        res=div(num1,num2)
+    }
+    else{
+        res="invalid operator"
+    }
+    document.write("<br>result is "+res)
+
+}
+
+
+
+
+     </script>
+</body>
+</html>
