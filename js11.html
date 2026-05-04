@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- array -->
+     <script>
+        let array=[23,67,90,267,37]
+        // callback function-> those function which are passed as an argument to another function
+        //  is called callback function
+        array.forEach(function(v,i,a){
+            document.write("value="+v+"index="+i+"array="+a+"<br>")
+        }) // callback function
+
+        // array.filter() -> it is used to filter the array based on some condition
+        // it returns a new array which contains the elements that satisfy the condition
+     let newarray=   array.filter(function(value,index,array){
+        // if(value>50){
+        //     return value
+        // }
+            return value>50
+        })
+        document.write("<br>new array is "+newarray)
+
+        // map()-> in map we can perform some operation on each element of the array and return a new array with the modified values
+        // number of inputs and outputs are same in map
+       let squares= array.map(function(v,i,a){
+            return v**2
+
+        })
+        document.write("<br>squares are "+squares)
+
+        // reduce()-> it is used to reduce the array to a single value by performing some operation on the elements of the array
+// when we dont define a initial value for the accumulator then the first element of the array is taken as the initial value and the iteration 
+// starts from the second element
+// reduce have two parameters
+// 1. callback function
+// 2. initial value of the accumulator (optional)
+        let s=array.reduce(function(acc,v,i,a){
+
+            return acc+v // 23+67+90+267+37
+        },0) // 0 is the initial value of the accumulator
+        document.write("<br>sum is "+s)
+
+   let subarray=  array.slice(1,4)
+    document.write("<br>sub array is "+subarray)
+    
+     </script>
+</body>
+</html>
