@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- assignment -->
+     <script>
+        // q4
+        let a=[10,23,11,12,33,44,2,5,6]
+        let first=a[0]
+       let last=a.length-1
+       console.log(first,last)
+        a[0]=a[last]
+        a[last]=first
+        console.log(a)
+
+        // q5
+        let myarr=[1,2,3]
+        let newarray=[]
+        for(let i=0;i<3;i++){
+            for(let element of myarr){
+            newarray.push(element)
+
+        }
+    }
+    console.log(newarray)
+
+    // q8
+    let array=[1,2,3,4,56,1,22,23,33,23,56]
+
+    let unique=[]
+    for(let element of array){
+        if(!unique.includes(element)){
+            unique.push(element)
+        }
+    }
+    console.log(unique)
+    for (let e of unique){ // 1,2,3,4,56,22,23,33
+        let count=0
+        for(let e1 of array){
+            if(e===e1){
+                count++ // 33-1
+            }
+        }
+       document.write(e+":"+count+"<br>")
+
+    }
+
+    // q11
+    let ar=[89,23,24,2,55,54,64]
+    ar.sort(function(a,b){
+        return b-a})
+      document.write(ar)
+        let max=ar[0] // 89
+
+        let second=0
+        for (let e2 of ar){ // 89,23,24,2,55,54,64
+            if(e2>second && e2<max){
+                second=e2 // 64
+            }
+        }
+        document.write("second largest is "+second)
+
+
+        //q15
+       let s1= ["Dreamer" , "infotech"]
+       for(let word of s1){
+        for (let char of word){
+            if(char=="e" || char=="a" || char=="i" || char=="o" || char=="u" || char=="E" ||
+             char=="A" || char=="I" || char=="O" || char=="U"){
+                document.write(char+"<br>")
+            }}
+       }
+     </script>
+</body>
+</html>
