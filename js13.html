@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- string 
+     1. string is immutable
+
+    -->
+     <script>
+        let sen="this is javascript"
+        document.write(sen.length+"<br>")
+        document.write(sen.charAt(3)+"<br>")
+        document.write(sen.concat(" a programming langauge")+"<br>")
+        document.write(sen.endsWith("javascript")+"<br>")
+        document.write(sen.startsWith("this")+"<br>")
+        document.write(sen.includes("is")+"<br>")
+        document.write(sen.indexOf("i",4)+"<br>")
+    document.write(sen.lastIndexOf("i")+"<br>")
+        document.write(sen.replace(/Is/gi,"was")+"<br>")
+        document.write(sen.padStart(25,"@")+"<br>")
+        document.write(sen.padEnd(25,"@")+"<br>")
+        document.write(sen.slice(4,15)+"<br>")
+        document.write(sen.toLowerCase()+"<br>")
+        document.write(sen.toUpperCase()+"<br>")
+        let s=" hello "
+        console.log(s.length)
+        console.log(s.trim().length+"<br>")
+        console.log(s.trimStart().length+"<br>")
+        console.log(s.trimEnd().length+"<br>")
+        console.log(sen.split(" "))
+        let x=  ["hello","js"]
+     document.write( x.join("-"))
+        
+
+     </script>
+</body>
+</html>
