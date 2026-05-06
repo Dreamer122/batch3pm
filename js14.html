@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- objects
+    pair 
+    key:value
+    "name":"monika"
+    {} 
+    -->
+    <script>
+        let obj={
+            name:"rajat",
+            age:20,
+            marks:89
+        }
+        // document.write(obj)
+        console.log(obj)
+        // add  a pair
+        obj.phone=234567890
+        obj['email']="rajat@gmail.com"
+        console.log(obj)
+        // replace
+        // obj.age=23
+        obj["age"]=23
+
+        console.log(obj)
+        // delete
+        delete obj.marks
+        console.log(obj)
+        // accessing a value
+       let n= obj["name"]
+       document.write(n)
+
+    //    for in 
+    for(let key in obj){
+        document.write(key+":"+obj[key]+"<br>")
+    }
+
+    // array in obj
+    let students={
+        Name:["kiran","diksha","harsh","rajat"],
+        marks:[45,67,89,67],
+
+
+    }
+    document.write(students.Name[2])
+
+    // function in obj
+    let person={
+        firstname:"kiran",
+        lastname:"singh",
+        fullname:function(){
+            console.log(this)
+            console.log(this.firstname+this.lastname)
+        }
+    }
+    // console.log(this)
+ document.write(   person.fullname)
+ person.fullname()
+
+
+
+    </script>
+
+</body>
+</html>

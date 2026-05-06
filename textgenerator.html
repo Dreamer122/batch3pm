@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+    <h2 class="text-4xl text-center">Text Generator</h2>
+    <div class="w-full sm:w-2/3 md:w-1/2 bg-gray-300 rounded mx-auto my-5 p-3">
+      <input type="text" class="w-3/5 border border-gray-400" id="num" />
+      <button onclick="textgenerator()" class="w-1/5 bg-green-900 text-green-300 p-1 rounded">
+        generate
+      </button>
+      <p class="text-2xl text-gray-700" id="result"></p>
+    </div>
+   
+
+    <script>
+      function textgenerator() {
+        let text=`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit fuga ipsam
+    corporis ipsa dolor quaerat illum itaque unde, ducimus adipisci cumque!
+    Delectus distinctio magnam corrupti quisquam mollitia, cumque perspiciatis
+    aliquam omnis saepe ab accusantium nulla eligendi cupiditate laboriosam iure
+    aspernatur minima? Suscipit fugit commodi atque. Quam expedita voluptates
+    exercitationem fuga adipisci, molestiae eos voluptatum. Magni ad beatae, at
+    distinctio porro accusamus dignissimos tempore quisquam, earum tempora
+    veritatis optio cum impedit expedita. Dolorum natus culpa praesentium quasi,
+    incidunt ea obcaecati ullam omnis modi quia! Laudantium reiciendis
+    laboriosam magnam possimus aut, aliquid, adipisci ipsa quam quas beatae
+    iusto sit quibusdam vel at?`
+        let num = Number(document.getElementById("num").value);
+        // split
+     let a=   text.split(" ")
+     console.log(a)
+     let wordsarray=a.slice(0,num)
+   let finalstring=  wordsarray.join(" ")
+        document.getElementById("result").innerHTML=finalstring
+
+      }
+    </script>
+  </body>
+</html>
