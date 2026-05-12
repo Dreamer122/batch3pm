@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="dice()">click</button>
+    <p id="time"></p>
+    <!--  -->
+
+    <script>
+        // math date 
+     let p= Math.PI
+     document.write(p+"<br>")
+     document.write(Math.sqrt(28)+"<br>")
+     document.write(Math.SQRT2+"<br>")
+     document.write(Math.abs(-6)+"<br>")
+     document.write(Math.cbrt(27)+"<br>")
+     document.write(Math.ceil(-6.1)+"<br>")
+     document.write(Math.floor(6.1)+"<br>")
+     document.write(Math.round(7.6)+"<br>")
+     document.write(Math.trunc(6.7)+"<br>")
+     document.write(Math.min(7,8,3)+"<br>")
+     document.write(Math.max(7,8,3)+"<br>")
+     document.write(Math.pow(3,2)+"<br>")
+     document.write(Math.random()*5+"<br>")
+     document.write(Math.sin(90*Math.PI/180)+"<br>")
+     document.write(Math.cos(0*Math.PI/180)+"<br>")
+     document.write(Math.tan(45*Math.PI/180)+"<br>")
+     document.write(Math.LOG10E+"<br>")
+
+    //  dice function
+
+    function dice(){
+        let player1=Math.floor(Math.random()*6)+1
+        let player2=Math.floor(Math.random()*6)+1
+        if(player1>player2){
+            document.write("player 1 is winner",player1)
+        }
+        else if(player2>player1){
+            document.write("player 2 is winner",player2)
+
+        }
+        else{
+            document.write("match draw",player1,player2)
+        }
+    }
+
+    // date functions 
+    let d=new Date()
+    document.write(d+"<br>")
+    document.write(d.getDate()+"<br>")
+    document.write(d.getDay()+"<br>")
+    document.write(d.getFullYear()+"<br>")
+    document.write(d.getHours()+"<br>")
+    document.write(d.toLocaleTimeString()+"<br>")
+    document.write(d.toLocaleDateString()+"<br>")
+
+    // set date
+    // let date=new Date(2025,10,20,12,23,34)
+    let date=new Date()
+    date.setMonth(0)
+    date.setDate(18)
+    date.setFullYear(2002)
+    
+    document.write(date)
+    // timeinterval
+   setInterval(function(){
+    let d=new Date()
+    document.getElementById("time").innerHTML=d.toLocaleTimeString();
+   },1000)
+    </script>
+</body>
+</html>
