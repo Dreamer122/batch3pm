@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <div class="bg-black text-white  text-center h-screen">
+        <h2 class="py-4 text-4xl" id="res">Let's play</h2>
+    
+    <div class="  flex justify-center">
+        <div class="w-1/4">
+            <p id="name1">Player 1 Name</p>
+            <img src="./dice1.png" alt="" id="image1">
+        </div>
+        <div class="w-1/4">
+            <p id="name2">Player 2 Name</p>
+
+            <img src="./dice2.png" alt="" id="image2">
+        </div>
+
+    </div>
+    <button class="px-5 py-2 rounded bg-green-300 text-black " onclick="dice()">Roll the dice</button> 
+    <button class="px-5 py-2 rounded bg-green-500 text-black hover:bg-transparent hover:border-green-600 hover:text-white hover:border transition-all duration-500 cursor-pointer" onclick="editname()">Edit the Name</button>
+   
+</div>
+
+<script>
+    function dice(){
+        let player1=Math.floor(Math.random()*6)+1
+        let player2=Math.floor(Math.random()*6)+1
+        let image1=document.getElementById("image1")
+        let image2=document.getElementById("image2")
+        let res=document.getElementById("res");
+        image1.src='dice'+player1+".png"
+        image2.src='dice'+player2+".png"
+        if(player1>player2){
+            res.innerHTML="player 1 is winner"
+        }
+        else if(player2>player1){
+            res.innerHTML="player 2 is winner"
+        }
+        else{
+            res.innerHTML="mathc Draw"
+
+        }
+
+    }
+    function editname(){
+        let name1=prompt("enter player 1 name")
+        let name2=prompt("enter player 2 name")
+        document.getElementById("name1").innerHTML=name1;
+        document.getElementById("name2").innerHTML=name2;
+    }
+</script>
+</body>
+</html>
