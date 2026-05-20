@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .parent{
+            background-color: lightblue;
+            width: 300px;
+            height: 300px;
+            border: 1px solid #000;
+        }
+        .child{
+            background-color: steelblue;
+            width: 100px;
+            height: 100px;
+            border: 1px solid #000;
+        }
+
+        .sib{
+            background-color: lightgreen;
+            width: 300px;
+            height: 300px;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="stop()">stop</button>
+
+    <div class="parent">
+        <h1>heading 1</h1>
+        <p>paragraph 1</p>
+        <p>paragraph 2</p>
+        <h2>heading 2</h2>
+        <p>paragraph 3</p>
+    </div>
+
+    <div class="sib">
+        <div class="child">
+            hello
+        </div>
+
+    </div>
+    <script>
+        // setTimeout cleartimeout
+
+        function show(){
+            alert("hello!")
+        }
+    //    let id= setTimeout(show,5000)
+       function stop(){
+        clearTimeout(id)
+       }
+    //    dom traversing
+
+
+    // parent -> child 
+    // child -> parent
+    // child -> sibling
+    // sibling -> child
+
+    // child
+let child1=document.getElementsByClassName("child")[0]
+// child1.style.background="red"
+// parent
+let p1=child1.parentElement
+console.log(p1)
+
+// target parent to get child
+let parent=document.getElementsByClassName("parent")[0]
+let c=parent.children
+console.log(c)
+
+// sibling
+c[1].nextElementSibling.style.color="yellow"
+c[1].previousElementSibling.style.color="red"
+c[1].nextElementSibling.nextElementSibling.style.color="green"
+c[1].remove()
+
+    </script>
+
+</body>
+</html>

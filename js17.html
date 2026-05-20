@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width:100px;
+            height: 100px;
+            border-radius: 10px;
+            background-color: steelblue;
+        }
+        .container{
+            background-color: seagreen;
+            border: 1px solid black;
+            height: 200px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    
+    <p id="res"></p>
+    <button id="stop">stop</button>
+    <button onclick="remclass()">removeclass</button>
+    <button id="create">create element</button>
+    <!-- dom 
+     
+    -->
+    <script>
+
+        // setinterval , clearinterval
+        let ptag=document.getElementById("res");
+        function showtime(){
+            let d=new Date()
+           ptag.innerText=d.toLocaleTimeString()
+        }
+       let id= setInterval(showtime,1000)
+       function stoptime(){
+        clearInterval(id)
+        addclass()
+       }
+
+    //    add class 
+    function addclass(){
+        ptag.classList.add('box')
+    }
+    function remclass(){
+        // ptag.classList.remove('box')
+        // ptag.classList.toggle('box')
+        ptag.classList.replace("box","container")
+
+    }
+
+    // addeventlistner
+
+    // without listner
+    // document.getElementById("stop").onclick=stoptime;
+    // addeventlistner
+    document.getElementById("stop").addEventListener('click',stoptime)
+
+    // remove event listner (pending)
+    // create element and remove element
+
+    // how to create html elements in js
+    let c=0
+    function create(){
+        c++
+        let colorarray=["#6FCF97","#1F6F5F","#FFD65A","#FF9D23","#EA5252"]
+        let ind=Math.floor(Math.random()*colorarray.length)
+        let div=document.createElement('div')
+        // div.innerText="hello"
+        div.innerHTML="<p>hello"+c+"</p>"
+        console.log(div)
+        div.style.height="200px"
+        div.style.width='200px';
+        div.style.background=colorarray[ind]
+        document.body.appendChild(div)
+        div.onclick=function(){
+            // console.log(this)
+            this.remove()
+        }
+    }
+    // create()
+    document.getElementById("create").addEventListener("click",create)
+
+
+
+    </script>
+</body>
+</html>
