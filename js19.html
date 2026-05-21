@@ -4,6 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .btn{
+            height: 30px;
+            width:100px;
+            color:white;
+            background-color: red;
+            border-radius: 10px;
+            border: 0;
+        }
+        .btn:hover{
+            background-color: rgb(144, 6, 6);
+        }
+        .edit{
+              height: 30px;
+            width:100px;
+            color:white;
+            background-color: rgb(37, 161, 25);
+             border-radius: 10px;
+            border: 0;
+            margin-right: 10px;
+        }
+        .edit:hover{
+            background-color: rgb(91, 212, 80);
+        }
+    </style>
 </head>
 <body>
     
@@ -15,9 +40,11 @@
 
     <table border="1">
         <tr>
+            <th> Sr no.</th>
             <th>Name</th>
             <th>Email</th>
             <th>Phone number</th>
+            <th>Actions</th>
         </tr>
         <tbody id="tablebody">
 
@@ -25,7 +52,12 @@
     </table>
 
     <script>
+
+        // CRUD APP
+        // create read update delete
+        let count=0
         function getvalues(){
+            count++
             let name=document.getElementById("name").value
             let email=document.getElementById("email").value
             let phone=document.getElementById("phone").value
@@ -35,19 +67,64 @@
             let td1=document.createElement("td")
             let td2=document.createElement("td")
             let td3=document.createElement("td")
-            td1.innerText=name
-            td2.innerText=email
-            td3.innerText=phone
+            let td4=document.createElement("td")
+            let td5=document.createElement("td")
+            let deletebtn=document.createElement("button")
+            let editbtn=document.createElement("button")
+            td1.innerText=count
+            td2.innerText=name
+            td3.innerText=email
+            td4.innerText=phone
+             // edit btn 
+            editbtn.innerText="Edit Data"
+            editbtn.classList.add("edit")
+            td5.appendChild(editbtn)
+
+            // delete btn
+            deletebtn.classList.add("btn")
+            deletebtn.innerText="delete"
+            console.log(deletebtn)
+            td5.appendChild(deletebtn)
+
+           
+
             row.appendChild(td1)
             row.appendChild(td2)
             row.appendChild(td3)
+            row.appendChild(td4)
+            row.appendChild(td5)
             body.appendChild(row)
 document.getElementById("name").value=""
 document.getElementById("email").value=""
 document.getElementById("phone").value=""
 
+deletebtn.addEventListener("click",function(){
+    row.remove()
+})
+editbtn.addEventListener("click",function(){
+    if(td2.isContentEditable){
+        editbtn.innerText="Edit Data"
+        td2.contentEditable=false
+        td3.contentEditable=false
+        td4.contentEditable=false
+       
+    }
+    else{
+        editbtn.innerText="save"
+    td2.contentEditable=true
+    td3.contentEditable=true
+    td4.contentEditable=true
+    }
+})
+
         }
         document.getElementById("submit").addEventListener("click",getvalues)
+
+
+
+        // create data 
+        // delete data
+        // edit data
     </script>
 </body>
 </html>
