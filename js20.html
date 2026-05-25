@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- 
+    selectors 
+    queryselector
+    queryselectorall
+    -->
+
+    <div class="box">
+        hello
+    </div>
+    <p class="box"> this si query selector</p>
+    <p id="p1"> this si query selector</p>
+    <p> this si query selector</p>
+
+    <script>
+      let elements= document.querySelector('.box'); // targets the first element of class, id , tagname 
+      console.log(elements)
+      let ele=document.querySelectorAll(".box")
+      console.log(ele)
+
+      let ids=document.querySelector("#p1")
+      console.log(ids)
+      let tagname=document.querySelectorAll("p")
+      console.log(tagname)
+
+    /*
+    dom -> document object model
+    selectors
+    dom traversing
+    createlement
+    removeelement
+    evenlistner
+    setinterval.clearinteval
+    settimeout/ cleartimeout
+    classlist
+    events
+
+    */
+   
+    </script>
+    
+</body>
+</html>
