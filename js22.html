@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .error{
+            color:red;
+
+        }
+        .showeye{
+            display:none
+        }
+        .hideeye{
+            display:inline
+        }
+        </style>
+</head>
+<body>
+    
+    <form action="" id="form1">
+        <input type="text" placeholder="enter your name" id="username" name="username"> <span class="error" id="nameerror"> </span> <br>
+        <input type="email" placeholder="enter your email" id="useremail" name="email"> <span class="error" id="emailerror"> </span> <br>
+        <div>
+
+            <input type="password" placeholder="enter your password" id="userpassword" name="password"> 
+          <span id="togglepassword">
+
+            <svg class="showeye" id="show" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+	<path d="M0 0h24v24H0z" fill="none" />
+	<path fill="#67e120" d="M12 9a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5a5 5 0 0 1 5-5a5 5 0 0 1 5 5a5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5" />
+</svg>
+
+
+<svg class="hideeye" id="hide" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+	<path d="M0 0h24v24H0z" fill="none" />
+	<g fill="none" fill-rule="evenodd">
+		<path d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z" />
+		<path fill="#67e120" d="M2.5 9a1.5 1.5 0 0 1 2.945-.404c1.947 6.502 11.158 6.503 13.109.005a1.5 1.5 0 1 1 2.877.85a10.1 10.1 0 0 1-1.623 3.236l.96.96a1.5 1.5 0 1 1-2.122 2.12l-1.01-1.01a9.6 9.6 0 0 1-1.67.915l.243.906a1.5 1.5 0 0 1-2.897.776l-.251-.935c-.705.073-1.417.073-2.122 0l-.25.935a1.5 1.5 0 0 1-2.898-.776l.242-.907a9.6 9.6 0 0 1-1.669-.914l-1.01 1.01a1.5 1.5 0 1 1-2.122-2.12l.96-.96a10.1 10.1 0 0 1-1.62-3.23A1.5 1.5 0 0 1 2.5 9" />
+	</g>
+</svg>
+          </span>
+
+
+        </div>
+        <input type="submit" value="submit">
+    </form>
+
+    <script>
+        // form validation
+     document.getElementById("form1").addEventListener("submit",function(e){
+                e.preventDefault()
+
+        let name=document.querySelector("#username").value;
+        let email=document.querySelector("#useremail").value;
+        let nameerror=document.querySelector("#nameerror")
+        let emailerror=document.querySelector("#emailerror")
+        // regex- >regularexpression
+        let nameexp=/^[a-zA-Z]{3,7}$/
+        let emailexp=/^(?=.{1,254}$)[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+
+        if(!name.match(nameexp)){
+                // alert("name is invalid")
+                nameerror.textContent="name can contain only letters"
+        }
+        else{
+            nameerror.textContent=""
+        }
+        if(!email.match(emailexp)){
+            // alert("email is invalid")
+            emailerror.textContent="email is invalid"
+        }
+        else{
+            emailerror.textContent=""
+        }
+        if(name.match(nameexp) && email.match(emailexp)){
+            alert("form submitted successfully")
+            console.log("name=",name,"email=",email)
+        }
+        // console.log(e.target)
+
+
+
+
+
+     })
+     let inputs=document.querySelectorAll("input")
+     for(let input of inputs){
+        console.log(input)
+        input.addEventListener("input",function(e){
+            // console.log("input event",e.target.value)
+            if(e.target.name=="username"){
+                   let nameexp=/^[a-zA-Z]{3,7}$/
+                   let nameerror=document.querySelector("#nameerror")
+                   if(!e.target.value.match(nameexp)){
+                    nameerror.textContent="name can contain only letters"
+                   }
+                   else{
+                    nameerror.textContent=""
+                   }              
+            }
+            if(e.target.name=="email"){
+        let emailexp=/^(?=.{1,254}$)[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+        let emailerror=document.querySelector("#emailerror")
+        if(!e.target.value.match(emailexp)){
+            emailerror.textContent="email is invalid"
+            }
+            else{
+                emailerror.textContent=""
+            }
+
+
+        }
+        })
+     }
+
+        let togglepassword=document.querySelector("#togglepassword")
+        let passwordinput=document.querySelector("#userpassword")
+        togglepassword.addEventListener("click",function(){
+            console.log("hello")
+           if( passwordinput.type=="password"){
+            passwordinput.type="text"
+            document.getElementById("show").classList.replace("showeye","hideeye")
+            document.getElementById("hide").classList.replace("hideeye","showeye")
+           }
+           else{
+             passwordinput.type="password"
+            document.getElementById("show").classList.replace("hideeye","showeye")
+            document.getElementById("hide").classList.replace("showeye","hideeye")
+           }
+        })
+
+    </script>
+</body>
+</html>
