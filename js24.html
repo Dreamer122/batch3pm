@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- rest operator 
+    json
+    localstorage
+    -> api  theory
+    -->
+
+    <script>
+        // rest operator -> used in function parameter to take variable number of arguments and store them in an array
+       
+        function large(...a){
+            console.log(a)
+            let max=a[0]
+            for(let ele of a){ // 6 , 8 ,9, 3
+                if(max<ele){ // 0<6 , 6<8 , 8<9 , 9<3
+                    max=ele // max=6 , 8 , 9
+                }
+            }
+            console.log("max="+max)
+        }
+        large(6,8,9,3)
+
+        // json -> javascript object notation -> data interchange format
+       // json is similar to javscript object 
+       // in json it is mandatory to store every value in doubleqoutes
+        
+
+        // localstorage
+        // domain specific
+        // it doen't have any expiration
+        // it is used to store data in key value pair form in browser
+        localStorage.setItem('loggedIn',true)
+        localStorage.setItem("age",34)
+        let storeddata=localStorage.getItem('age')
+        document.write(storeddata)
+        localStorage.removeItem('age')
+       let keys= localStorage.key(1)
+        document.write(keys)
+        localStorage.clear()
+        let names=["dikhsa","sohit","rajat","harsh"]
+        // localStorage.setItem("names",names)
+        // stringify parse
+        localStorage.setItem("names",JSON.stringify(names))
+let arrayofnames=JSON.parse(localStorage.getItem("names"))
+console.log(arrayofnames)
+
+let obj={
+            'name':"john",
+            'age':30,
+            'city':"new york"
+        }
+        localStorage.setItem("detail",JSON.stringify( obj))
+        let objdata=JSON.parse(localStorage.getItem("detail"))
+        console.log(objdata)
+    </script>
+
+
+
+</body>
+</html>
