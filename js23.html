@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="show"></h2>
+    
+    <script>
+        // advance javascript
+        // es6 features ECMAScript 2015
+        // -> arrow function (fat arrow function)
+        // -> template literals
+        // -> destructuring
+        // -> spread operator
+        // -> rest operator
+        // -> closure
+        // -> promise
+        // -> async await   
+        // -> local storage and session storage
+        // -> api  , fetch
+        // -> json
+        // -> class and object
+        // -> modules
+
+
+        // Arrow function -> anonymous function
+        function add(x,y){
+            return x+y
+        }
+        let x=add(3,7)
+
+        let addition=(x,y)=>{
+            return x+y
+        }
+       let y= addition(8,9)
+       console.log(y)
+
+       let sub=x=>{
+        console.log(x)
+       }
+       sub(6)
+
+       let s1=x=>x
+       let v1=s1(7)
+       console.log("v1",v1)
+
+       let s2=(x,y)=>x-y
+         let v2=s2(9,5)
+         console.log("v2",v2)  
+         
+
+        //  template literal / string interpolation
+// document.querySelector("#show").innerHTML="value of v2="+v2+"this is subtraction"+(v1+v2)
+document.querySelector("#show").innerHTML=`value of v2= ${v2} this is the subtraction of two values ${v1+v2}`
+        
+// destructuring -> array and object destructuring
+
+let array=[89,56,45,7,90]
+// let a=array[0]
+let [a,b,c,d,e]=array
+console.log(`a=${a} d=${d}`)
+
+let obj={
+    ussername:"ashish",
+    email:"ash@gmail.com"
+}
+let {username,email}=obj
+console.log(`name=${username} email=${email}`)
+
+
+// spread operator -> array and object
+let array1=["hello","js","python"]
+let array2=["es6",...array1] // spread
+console.log(...array2)
+
+let obj2={
+    ...obj,
+    phone:567890,
+    add:"12 sec"
+}
+console.log(obj2)
+let arrayofletter=[..."hello"]// string to array (spread operator)
+console.log(arrayofletter)
+
+
+
+         
+    </script>
+
+
+</body>
+</html>
