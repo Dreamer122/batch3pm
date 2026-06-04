@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- 
+    promise -> it is used to handle asynchronous operations in javascript
+    it has three states -> pending , resolved , rejected
+
+    synchronous javascript -> code is executed line by line and each line waits for the previous line to complete before executing
+    asynchronous javascript -> setTimeout , setInterval , fetch , promise , async await
+
+
+    -->
+
+    <script>
+        // synchronous javascript
+  
+        console.log("start")
+        function add(a,b){
+         
+            console.log("addition is ",a+b)
+        }
+        // asyncrounous javascript
+           setTimeout(()=>add(5,9),3000) // timer start 1
+        console.log("end")
+
+        // js engine -> v8 
+
+        // promise,async await , fetch
+       // callstack -> it is a data structure that stores the function calls in the order they are called
+        
+    //    promise -> 
+    // states
+    // fulfill
+    // reject (un fulfilled)
+    // pending 
+    // promise is a object that represents the eventual completion (or failure) of an asynchronous operation and its resulting value
+        
+    let myprom=new Promise((resolve,reject)=>{
+        console.log("hello promise")
+        let a=10
+        reject("error occured while fetching data")
+        // resolve(a)
+    })
+    // console.log(myprom)
+    myprom.then((d)=>{
+        console.log("resolve",d)
+        
+    }).catch((error)=>console.log("reject",error))
+
+
+    </script>
+</body>
+</html>
