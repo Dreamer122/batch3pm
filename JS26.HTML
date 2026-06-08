@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        PROMISE
+    </title>
+</head>
+<body>
+    <!-- 
+    
+    states of promise
+    1. pending -> initial state of promise when it is created
+    2. fulfilled -> when the promise is resolved successfully
+    3. rejected -> when the promise is rejected due to some error
+
+    promise ->  asychronous operations
+
+    api -> data fetch
+
+    comppleted -> resolve -> then(callback function)
+    not completed -> reject -> catch(callback function)
+
+    -->
+    <script>
+        let promise1=new Promise(function(resolve,reject){
+            let success=true;
+            if(success){
+                setTimeout(()=>{
+                    resolve([45,67,89,23])
+                },2000)
+            }
+            else{
+                reject("error occureed while fetching data")
+            }
+        })
+
+        // consume 
+        promise1.then((data)=>{
+            for (let i of data){
+                document.write(i+"<br>")
+            }
+        })
+        .catch((error)=>{
+            console.log(error)
+
+        })
+
+        function task(message) {
+    return new Promise(resolve => {
+    console.log(message);
+    resolve();
+});
+}
+
+let p1=task('Task 1 completed')
+console.log(p1)
+p1.then(()=>{
+let p2=task("task 2 completed")
+console.log(p2)
+p2.then(()=>{
+    console.log("all tasks completed")
+})
+}
+)
+
+
+
+    </script>
+</body>
+</html>

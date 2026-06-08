@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- async and await
+     they allow us to write asynchronous code in a synchronous manner,
+      making it easier to read and maintain.
+   
+      an async function always returns a promise,
+      if it return a non promise values , js automaticaly wraps it in a resolved promise
+      -->
+
+<script>
+  async function mytask(){
+        return "hello"
+    }
+  let output=  mytask()
+  console.log(output)
+  output.then((d)=>console.log("from then",d))
+
+  async function mytask2(){
+    return new Promise((resolve,reject)=>{
+        resolve("hello task completed")
+    })
+  }
+  let res=mytask2()
+  console.log(res)
+  res.then((d)=>console.log("from 2nd task ",d))
+</script>
+
+</body>
+</html>
