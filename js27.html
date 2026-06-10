@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- async and await
+     -->
+
+     <script>
+        async function getdata(){
+            return new Promise((resolve,reject)=>{
+                setTimeout(()=>{
+                    resolve("all data")
+                },5000)
+
+            })
+        }
+         async function getdata1(){
+            return new Promise((resolve,reject)=>{
+                setTimeout(()=>{
+                    resolve("2nd prom")
+                },3000)
+
+            })
+        }
+
+    let mypro= getdata()
+    // mypro.then((d)=>{console.log(d)})
+
+    // await 
+    async function callprom(){
+        console.log("before promise")
+        // mypro.then((d)=>console.log(d))
+        let output=await mypro
+        console.log(output)
+        console.log("after promise")
+    }
+    callprom()
+
+        console.log("hello")
+
+
+     </script>
+</body>
+</html>

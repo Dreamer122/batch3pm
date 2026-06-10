@@ -1,5 +1,11 @@
-{
+[{
     "name":"jhon",
     "age":34,
     "phone":3456789
+},
+{
+    "name":"sohit",
+    "age":25,
+    "phone":3456789
 }
+]

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+    <style>
+        .card{
+            height:300px;
+            width:250px;
+            border:1px solid grey;
+            border-radius:5px
+
+        }
+        .image{
+            width:100%;
+            height:200px;
+        }
+        .container{
+            display:flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="heading"> data is here</h1>
+    <table border="1">
+        <tr>
+
+      
+        <th>
+            id
+        </th>
+        <th>
+            name
+        </th>
+        <th>
+            email
+        </th>
+          </tr>
+          <tbody class="tablebody">
+
+          </tbody>
+    </table>
+
+   <div class="container">
+
+   </div>
+    
+    <!-- api
+     
+    fetching api
+
+    API -> Application programming interface
+
+    website
+
+    frontend (populate)
+    backend (api)
+    database
+
+    customer (frontend)
+    waiter -> order -> kitchen (chef)(backend)
+
+    chef <- request (order items)
+    checf chcek the order items are availbale or not
+
+    -> response -> waiter -> customer
+
+    client request -> server -> response -> client
+
+fetch()
+it returns a promise 
+then we have to convert the readable stream to json
+then we will get a promise 
+then consume it and get data
+
+    -->
+<script>
+   const data= fetch("https://jsonplaceholder.typicode.com/users")
+   console.log(data)
+
+
+   data.then((d)=>{return d.json()})
+   .then((d1)=>{
+       let tbody=document.querySelector(".tablebody")
+      
+    console.log("my data",d1)
+    
+    for(let i of d1){
+        let tr=document.createElement("tr")
+        let td1=document.createElement("td")
+        let td2=document.createElement("td")
+        let td3=document.createElement("td")
+        td1.innerText=i.id
+        td2.innerText=i.name
+        td3.innerText=i.email
+        tr.appendChild(td1)
+        tr.appendChild(td2)
+        tr.appendChild(td3)
+        tbody.append(tr)
+
+    }
+
+   }
+)
+   
+let d=fetch("http://127.0.0.1:5500/js/jsondata.json")
+  console.log(d)
+  d.then((res)=>res.json()).then((res)=>console.log("data=",res))
+
+  async function getdata(){
+
+      const res=await fetch("https://fakestoreapi.com/products")
+      const data=await res.json()
+    console.log("data",data)
+
+    
+    const container=document.querySelector(".container")
+    for (let i of data){
+        container.innerHTML+=` <div class="card">
+        <img src=${i.image} alt="" class="image" />
+        <p><b>${i.price}</b></p>
+        <p>${i.title}</p>
+    </div>`
+        
+    }
+  }
+  getdata()
+
+</script>
+
+</body>
+</html>
